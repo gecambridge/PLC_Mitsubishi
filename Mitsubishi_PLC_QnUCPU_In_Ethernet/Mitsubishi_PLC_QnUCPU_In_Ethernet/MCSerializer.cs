@@ -20,14 +20,13 @@ namespace Mitsubishi_PLC_QnUCPU_In_Ethernet
 
         public static T Deserialize<T>(byte[] bytes)
         {
-            T message = default(T);
-
-            int size = Marshal.SizeOf(message);
+            Type type = typeof(T);
+            int size = Marshal.SizeOf(type);
             IntPtr ptr = Marshal.AllocHGlobal(size);
 
             Marshal.Copy(bytes, 0, ptr, size);
 
-            message = (T)Marshal.PtrToStructure(ptr, message.GetType());
+            var message = (T)Marshal.PtrToStructure(ptr, type);
             Marshal.FreeHGlobal(ptr);
 
             return message;

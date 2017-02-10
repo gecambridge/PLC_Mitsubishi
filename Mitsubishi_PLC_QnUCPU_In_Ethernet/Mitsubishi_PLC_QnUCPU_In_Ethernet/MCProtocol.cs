@@ -24,7 +24,7 @@ namespace Mitsubishi_PLC_QnUCPU_In_Ethernet
         [FieldOffset(13)]
         public ushort SubCommand;
         [FieldOffset(15)]
-        public ulong DeviceNoCode;
+        public uint DeviceNoCode;
         //[FieldOffset(18)]
         //public ushort DeviceCode;
         [FieldOffset(19)]

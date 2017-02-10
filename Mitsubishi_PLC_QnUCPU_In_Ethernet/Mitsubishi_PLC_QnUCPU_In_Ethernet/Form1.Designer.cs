@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lb_title = new System.Windows.Forms.Label();
-            this.btn_connect = new System.Windows.Forms.Button();
             this.btn_disconnect = new System.Windows.Forms.Button();
             this.tb_ipaddr = new System.Windows.Forms.TextBox();
             this.lb_ipaddr = new System.Windows.Forms.Label();
@@ -43,6 +42,8 @@
             this.lb_speed = new System.Windows.Forms.Label();
             this.tb_speed = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_connect = new System.Windows.Forms.Button();
+            this.tb_constatus = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lb_title
@@ -56,21 +57,11 @@
             this.lb_title.Text = "▣ Q30UDE CPU 인터페이스 프로그램";
             this.lb_title.Click += new System.EventHandler(this.lb_title_Click);
             // 
-            // btn_connect
-            // 
-            this.btn_connect.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_connect.Location = new System.Drawing.Point(228, 41);
-            this.btn_connect.Name = "btn_connect";
-            this.btn_connect.Size = new System.Drawing.Size(75, 27);
-            this.btn_connect.TabIndex = 1;
-            this.btn_connect.Text = "PLC접속";
-            this.btn_connect.UseVisualStyleBackColor = true;
-            this.btn_connect.Click += new System.EventHandler(this.btn_connect_Click);
-            // 
             // btn_disconnect
             // 
+            this.btn_disconnect.Enabled = false;
             this.btn_disconnect.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btn_disconnect.Location = new System.Drawing.Point(228, 72);
+            this.btn_disconnect.Location = new System.Drawing.Point(309, 41);
             this.btn_disconnect.Name = "btn_disconnect";
             this.btn_disconnect.Size = new System.Drawing.Size(75, 27);
             this.btn_disconnect.TabIndex = 2;
@@ -180,11 +171,35 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btn_connect
+            // 
+            this.btn_connect.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_connect.Location = new System.Drawing.Point(228, 41);
+            this.btn_connect.Name = "btn_connect";
+            this.btn_connect.Size = new System.Drawing.Size(75, 27);
+            this.btn_connect.TabIndex = 1;
+            this.btn_connect.Text = "PLC접속";
+            this.btn_connect.UseVisualStyleBackColor = true;
+            this.btn_connect.Click += new System.EventHandler(this.btn_connect_Click);
+            // 
+            // tb_constatus
+            // 
+            this.tb_constatus.Enabled = false;
+            this.tb_constatus.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_constatus.Location = new System.Drawing.Point(228, 73);
+            this.tb_constatus.Name = "tb_constatus";
+            this.tb_constatus.Size = new System.Drawing.Size(155, 25);
+            this.tb_constatus.TabIndex = 13;
+            this.tb_constatus.Text = "Disconnected";
+            this.tb_constatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tb_constatus.TextChanged += new System.EventHandler(this.tb_constatus_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 172);
+            this.Controls.Add(this.tb_constatus);
             this.Controls.Add(this.lb_speed);
             this.Controls.Add(this.tb_speed);
             this.Controls.Add(this.lb_counter);
@@ -209,7 +224,6 @@
         #endregion
 
         private System.Windows.Forms.Label lb_title;
-        private System.Windows.Forms.Button btn_connect;
         private System.Windows.Forms.Button btn_disconnect;
         private System.Windows.Forms.TextBox tb_ipaddr;
         private System.Windows.Forms.Label lb_ipaddr;
@@ -222,6 +236,8 @@
         private System.Windows.Forms.Label lb_speed;
         private System.Windows.Forms.TextBox tb_speed;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btn_connect;
+        private System.Windows.Forms.TextBox tb_constatus;
     }
 }
 
